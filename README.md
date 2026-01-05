@@ -1,4 +1,4 @@
-# Logical Expression Analyzer
+# Logical  Analyzer
 
 ## Project Description
 The **Logical Expression Analyzer** is a C++ console application designed to evaluate and analyze Boolean logic. It parses complex logical expressions containing variables and standard operators (AND, OR, NOT, XOR, Implication, Biconditional) to generate comprehensive truth tables. It can determine if a statement is a Tautology, Contradiction, or Contingency, and can also compare two separate expressions to verify Logical Equivalence.
