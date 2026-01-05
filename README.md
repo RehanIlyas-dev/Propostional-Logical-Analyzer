@@ -1,32 +1,17 @@
 # Logical Expression Analyzer
 
-## Project Overview
-This is a C++ console application designed to analyze logical propositions. It allows users to input logical expressions, generates truth tables for up to 10 variables, and evaluates the logical status of the statements (Tautology, Contradiction, or Contingency).
+## Project Description
+The **Logical Expression Analyzer** is a C++ console application designed to evaluate and analyze Boolean logic. It parses complex logical expressions containing variables and standard operators (AND, OR, NOT, XOR, Implication, Biconditional) to generate comprehensive truth tables. It can determine if a statement is a Tautology, Contradiction, or Contingency, and can also compare two separate expressions to verify Logical Equivalence.
 
-This project was developed as a first-semester programming assignment to demonstrate proficiency in C++ logic, array manipulation, and recursive parsing.
+## Installation Instructions
 
-## Features
-* **Truth Table Generation:** Automatically detects variables and generates a full truth table ($2^n$ rows).
-* **Expression Evaluation:** Parses and solves complex boolean expressions respecting operator precedence (with parentheses support).
-* **Single Mode:** Analyzes one expression to determine if it is a Tautology, Contradiction, or Contingency.
-* **Comparison Mode:** Analyzes two expressions simultaneously to check for **Logical Equivalence**.
-* **Supported Operators:**
-    * `!` or `~` : NOT
-    * `&` : AND
-    * `|` : OR
-    * `^` : XOR
-    * `>` : IMPLICATION ($P \rightarrow Q$)
-    * `=` : BICONDITIONAL ($P \leftrightarrow Q$)
+1. **Clone or Download** this repository to your local machine.
+2. Ensure you have a C++ compiler installed (e.g., G++, Clang, or MSVC).
+3. Open your terminal or command prompt and navigate to the project directory.
+4. Compile the source code using the following command:
 
-## Directory Structure
-```text
-Logical_Analyzer_Project/
-│
-├── main.cpp                  # Source code
-├── README.md                 # Project documentation
-├── tests/                    # Text descriptions of test cases
-│   ├── test_case_01.txt
-│   └── test_case_02.txt
+   ```bash
+   g++ main.cpp -o logical_analyzer
 └── data/                     # Sample input files for automated testing
     ├── input_single.txt
     └── input_double.txt
