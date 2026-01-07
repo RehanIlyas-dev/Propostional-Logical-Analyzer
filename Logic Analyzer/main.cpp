@@ -15,9 +15,9 @@ void inputTwoExpressions(char expr1[], char expr2[]);
 int detectvariables(char expr[], char vars[]);
 void printVariables(int varCount, char vars[]);
 int combineVariables(char expr1[], char expr2[], char vars[]);
-void generateTruthTable(int varCount, int table[][100]);
-void printTruthTableSingle(int varCount, char vars[], char expr[], int table[][100]);
-void printTruthTableDouble(int varCount, char vars[], char expr1[], char expr2[], int table[][100]);
+void generateTruthTable(int varCount, int table[][1000]);
+void printTruthTableSingle(int varCount, char vars[], char expr[], int table[][1000]);
+void printTruthTableDouble(int varCount, char vars[], char expr1[], char expr2[], int table[][1000]);
 int evaluateExpression(char expr[], char vars[], int varCount, int tablerow[]);
 bool isValidExpression(char expr[]);
 void printInstructionsmenu();
@@ -36,8 +36,8 @@ int main()
         if (option == 1)
         {
             char expr[100];      // A char Array is used to store sequence of chracters terminated by null '\0' chracter
-            char vars[100];       // 2D Array for storing unique variables
-            int table[500][100]; // A 2D Array for storing all possible Combinations
+            char vars[1000];       // 2D Array for storing unique variables
+            static int table[2048][1000]; // A 2D Array for storing all possible Combinations
             cout << "\nSingle expression Selected\n " << endl;
             inputSingleExpression(expr);
 
@@ -59,8 +59,8 @@ int main()
         }
         else if (option == 2)
         {
-            char expr1[100], expr2[100], vars[100];
-            int table[500][100];
+            char expr1[100], expr2[100], vars[1000];
+            static int table[2048][1000];
 
             cout << "\nTwo expressions Selected\n " << endl;
             inputTwoExpressions(expr1, expr2);
@@ -196,7 +196,7 @@ void printVariables(int varCount, char vars[])
     cout << endl;
 }
 
-void generateTruthTable(int varCount, int table[][100])
+void generateTruthTable(int varCount, int table[][1000])
 {
     int rows = pow(2, varCount); // Calculate total no. of rows = 2^varCount
 
@@ -349,7 +349,7 @@ int evaluateExpression(char expr[], char vars[], int varCount, int tableRow[])
     return result;
 }
 
-void printTruthTableSingle(int varCount, char vars[], char expr[], int table[][100])
+void printTruthTableSingle(int varCount, char vars[], char expr[], int table[][1000])
 {
     bool allTrue = true;
     bool allFalse = true;
@@ -398,7 +398,7 @@ void printTruthTableSingle(int varCount, char vars[], char expr[], int table[][1
     }
 }
 
-void printTruthTableDouble(int varCount, char vars[], char expr1[], char expr2[], int table[][100])
+void printTruthTableDouble(int varCount, char vars[], char expr1[], char expr2[], int table[][1000])
 {
     int rows = pow(2, varCount);
     bool equivalent = true;
